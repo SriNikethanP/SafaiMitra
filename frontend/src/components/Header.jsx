@@ -1,12 +1,19 @@
-import { UserButton, useUser } from "@clerk/clerk-react";
+import { UserButton } from "@clerk/clerk-react";
 
 const Header = () => {
-  const { user } = useUser();
   return (
-    <div>
-      <h1>Welcome, {user.firstName}</h1>
-      <UserButton />
-    </div>
+    <nav className="flex justify-between bg-black text-white p-2 h-16">
+      <h1 className="text-3xl font-semibold p-2">SafaiMitra</h1>
+      <div className="flex gap-2">
+        <ul className="flex gap-12 items-center font-medium text-xl mr-4">
+          <a href="/">Home</a>
+          <a href="/upload">Upload</a>
+          <a href="/history">History</a>
+          <a href="/notifications">Notifications</a>
+        </ul>
+        <UserButton />
+      </div>
+    </nav>
   );
 };
 
