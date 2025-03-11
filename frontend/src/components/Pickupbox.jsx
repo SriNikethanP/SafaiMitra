@@ -1,7 +1,10 @@
+import Button from "./Button";
 import Card from "./Category-selector";
 import CustomDatePicker from "./Custom-datepicker";
 import Dropdown from "./Dropdown";
+import GarbageTypeSelect from "./GarbageType";
 import Input from "./Input";
+import LocationSearch from "./LocationSearch";
 
 const PickupBox = () => {
   return (
@@ -11,10 +14,13 @@ const PickupBox = () => {
 
       {/* Input, Card, and Date Picker Section */}
       <div className="flex flex-col items-start gap-4 w-full">
-        <Input />
-        <Card />
+        {/* <Input /> */}
+        <LocationSearch/>
+        {/* <Card /> */}
+       <GarbageTypeSelect/>
         {/* <Dropdown /> */}
         <CustomDatePicker />
+        <Button button={"Schedule Pickup"}/>
       </div>
     </div>
   );
