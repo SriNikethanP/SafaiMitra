@@ -5,6 +5,10 @@ const captainSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    username:{
+        type: String,
+        required:true
+    },
     email: {
         type: String,
         required: true,
@@ -17,38 +21,24 @@ const captainSchema = new mongoose.Schema({
         required: true,
         select: false,
     },
-    socketId: {
-        type: String,
-    },
-
     vehicle: {
-        color: {
-            type: String,
-            required: true,
-            minlength: [ 3, 'Color must be at least 3 characters long' ],
-        },
         number: {
             type: String,
             required: true
         },
-        vehicleType: {
+        name: {
             type: String,
             required: true,
         }
     },
-
-    location: {
-        ltd: {
-            type: Number,
-        },
-        lng: {
-            type: Number,
-        }
+    profilePic:{
+        type:String,
+        default:""
     }
 })
 
 
-const captainModel = mongoose.model('captain', captainSchema)
+const Captain = mongoose.model('captain', captainSchema)
 
 
-module.exports = captainModel;
+export default Captain;

@@ -60,6 +60,7 @@ import authRouter from "./routes/auth.route.js";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import { ConnectDB } from "./lib/db.js";
+import collectRouter from "./routes/collect.route.js"
 
 dotenv.config();
 
@@ -85,11 +86,15 @@ const Driver = mongoose.model("Driver", driverSchema);
 
 // Routes
 app.use("/api/auth", authRouter);
+<<<<<<< Updated upstream
 app.use("/api/collect", authRouter);
 
 // Handle socket connections
 io.on("connection", (socket) => {
   console.log("A driver connected:", socket.id);
+=======
+app.use("api/collect", collectRouter);
+>>>>>>> Stashed changes
 
   // Listen for driver's actual location updates
   socket.on("updateLocation", async (data) => {

@@ -9,11 +9,8 @@ const OrderSchema = new mongoose.Schema({
     },
     captain: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'captain',
-    },
-    pickup: {
-        type: String,
-        required: true,
+        ref: 'captains',
+        required: true
     },
 
     status: {
@@ -32,10 +29,22 @@ const OrderSchema = new mongoose.Schema({
         enum:['wet', 'dry', 'recycle'],
         default: 'recycle',
     },
-    image: {
-        type:String,
-        default:""
-        // required: true,
+    selectedDate: {
+        type: Date,
+        required: true
+    },
+    location: {
+        lat: {
+            type: Number,
+            default:"",
+            required: true
+            
+        },
+        long: {
+            type: Number,
+            default:"",
+            required: true
+        }
     }
 })
 
