@@ -2,6 +2,7 @@ import React from "react";
 import LocationBox from "../../components/Locationbox";
 import Button from "../../components/Button";
 import ImageUploader from "../../components/ImageUploader";
+import LocationSearch from "../../components/LocationSearch";
 
 const UploadPage = () => {
   return (
@@ -12,7 +13,8 @@ const UploadPage = () => {
         </h1>
         <div className="flex flex-col items-center gap-4 w-full">
           <ImageUploader />
-          <Button />
+          <LocationSearch/>
+          <Button button={"Upload"} />
         </div>
       </div>
       <div className=" flex-1 bg-green-700">

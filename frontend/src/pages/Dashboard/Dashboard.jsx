@@ -9,7 +9,7 @@ const Dashboard = () => {
         <div className="flex-1 justify-center items-center">
           <PickupBox />
         </div>
-        <div className="flex-1 bg-green-700 ">
+        <div className="flex-1 h-screen  bg-green-700 ">
           <LocationBox upload={false} />
         </div>
       </div>
