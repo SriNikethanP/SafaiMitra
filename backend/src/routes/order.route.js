@@ -5,4 +5,4 @@ import {order} from "../controllers/order.controller.js";
 
 const router = express.Router();
 
-router.post("/order", protectRoute, order);
+router.post("/create-order", protectRoute, createorder);
