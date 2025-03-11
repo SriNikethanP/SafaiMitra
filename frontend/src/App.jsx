@@ -3,29 +3,60 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import SignInPage from "./pages/Authorisation/Sign-in";
 import SignUpPage from "./pages/Authorisation/Sign-up";
+import ProfilePage from "./pages/Dashboard/ProfilePage";
+import HistoryPage from "./pages/Dashboard/HistoryPage";
+import NotificationPage from "./pages/Dashboard/NotificationPage";
+import UploadPage from "./pages/Dashboard/UploadPage";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        {/* Public Routes */}
-        <Route path="/login" element={<SignInPage />} />
-        <Route path="/register" element={<SignUpPage />} />
+    <div>
+      <Header />
+      <Router>
+        <Routes>
+          {/* Public Routes */}
+          <Route path="/login" element={<SignInPage />} />
+          <Route path="/register" element={<SignUpPage />} />
 
-        {/* Private Route - Dashboard */}
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
+          {/* Private Route - Dashboard */}
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
 
-        {/* Default Route (Redirect to Login) */}
-        {/* <Route path="*" element={<Navigate to="/login" replace />} /> */}
-      </Routes>
-    </Router>
+          {/* <Route path="/profile" element={<ProfilePage />} /> */}
+          <Route
+            path="/history"
+            element={
+              <ProtectedRoute>
+                <HistoryPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/notifications"
+            element={
+              <ProtectedRoute>
+                <NotificationPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/upload"
+            element={
+              <ProtectedRoute>
+                <UploadPage />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 

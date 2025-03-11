@@ -11,4 +11,5 @@ const SignInPage = () => (
     </ClerkLoading>
   </div>
 );
+
 export default SignInPage;
