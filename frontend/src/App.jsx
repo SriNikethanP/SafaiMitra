@@ -3,7 +3,6 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import SignInPage from "./pages/Authorisation/Sign-in";
 import SignUpPage from "./pages/Authorisation/Sign-up";
-import ProfilePage from "./pages/Dashboard/ProfilePage";
 import HistoryPage from "./pages/Dashboard/HistoryPage";
 import NotificationPage from "./pages/Dashboard/NotificationPage";
 import UploadPage from "./pages/Dashboard/UploadPage";
