@@ -1,20 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
-const ImageUploader = () => {
-  const [image, setImage] = useState(null);
-
-  const handleImageUpload = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      setImage(URL.createObjectURL(file));
-    }
-  };
-
+const ImageUploader = ({ image, handleImageUpload }) => {
   return (
     <div className="flex flex-col items-center gap-4">
-      {/* Clickable Upload Box */}
       <label className="w-124 h-72 flex items-center justify-center border-2 border-dashed border-gray-400 rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200 transition">
         <input
+          id="fileInput"
           type="file"
           accept="image/*"
           className="hidden"

@@ -1,29 +1,32 @@
 import mongoose from "mongoose";
 
-const uploadSchema = new mongoose.Schema({
+const uploadSchema = new mongoose.Schema(
+  {
     user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'users',
-        required: true
+      type: String,
+      required: true,
     },
-    uploadImage: {
-        type: String,
-        required: true,
-        default:""
+    imageUrl: {
+      type: String,
+      required: true,
+    },
+    address: {
+      type: String,
+      required: true,
     },
     location: {
-        lat: {
-            type: Number,
-            default:"",
-            required: true
-        },
-        long: {
-            type: Number,
-            default:"",
-            required: true
-        }
-    }
-});
+      lat: {
+        type: Number,
+        required: true,
+      },
+      long: {
+        type: Number,
+        required: true,
+      },
+    },
+  },
+  { timestamps: true }
+);
 
 const Upload = mongoose.model("Upload", uploadSchema);
 

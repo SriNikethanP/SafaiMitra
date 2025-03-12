@@ -1,12 +1,18 @@
 import React, { useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  useMapEvents,
+} from "react-leaflet";
 import axios from "axios";
 import LocationSearch from "./LocationSearch";
 import "leaflet/dist/leaflet.css";
 
 const MapComponent = () => {
   const [selectedLocation, setSelectedLocation] = useState({
-    latitude: 17.330910, // Default Hyderabad location
+    latitude: 17.33091, // Default Hyderabad location
     longitude: 78.537971,
     name: "Hyderabad, Telangana",
   });
@@ -40,7 +46,9 @@ const MapComponent = () => {
     });
 
     return selectedLocation.latitude ? (
-      <Marker position={[selectedLocation.latitude, selectedLocation.longitude]}>
+      <Marker
+        position={[selectedLocation.latitude, selectedLocation.longitude]}
+      >
         <Popup>{selectedLocation.name}</Popup>
       </Marker>
     ) : null;
@@ -48,14 +56,11 @@ const MapComponent = () => {
 
   return (
     <div>
-      {/* Location Input Field */}
-      {/* <LocationSearch onSelectLocation={setSelectedLocation} /> */}
-
-      {/* Map Container */}
       <MapContainer
         center={[selectedLocation.latitude, selectedLocation.longitude]}
         zoom={15}
-        style={{ height: "30rem", width: "38rem" }}
+        className="rounded-3xl shadow-3xl "
+        style={{ height: "34rem", width: "40rem" }}
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         <LocationMarker />

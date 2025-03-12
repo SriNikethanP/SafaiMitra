@@ -39,7 +39,7 @@ function App() {
             }
           />
           <Route
-            path="/notifications"
+            path="/dashboard"
             element={
               <ProtectedRoute>
                 <NotificationPage />

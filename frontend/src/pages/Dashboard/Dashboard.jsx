@@ -1,4 +1,3 @@
-import Header from "../../components/Header";
 import LocationBox from "../../components/Locationbox";
 import PickupBox from "../../components/Pickupbox";
 
